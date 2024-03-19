@@ -105,9 +105,6 @@ class CustomSlidableAction extends StatelessWidget {
           ),
           child: Container(
             alignment: Alignment.topRight,
-            margin: const EdgeInsets.only(
-              right: 5,
-            ),
             child: child,
           ),
         ),
@@ -140,13 +137,12 @@ class SlidableAction extends StatelessWidget {
     this.foregroundColor,
     this.autoClose = _kAutoClose,
     required this.onPressed,
-    this.icon,
+    required this.icon,
     this.spacing = 4,
-    this.label,
+    required this.label,
     this.borderRadius = BorderRadius.zero,
     this.padding,
   })  : assert(flex > 0),
-        assert(icon != null || label != null),
         super(key: key);
 
   /// {@macro slidable.actions.flex}
@@ -165,7 +161,7 @@ class SlidableAction extends StatelessWidget {
   final SlidableActionCallback? onPressed;
 
   /// An icon to display above the [label].
-  final IconData? icon;
+  final Widget icon;
 
   /// The space between [icon] and [label] if both set.
   ///
@@ -173,7 +169,7 @@ class SlidableAction extends StatelessWidget {
   final double spacing;
 
   /// A label to display below the [icon].
-  final String? label;
+  final Widget label;
 
   /// Padding of the OutlinedButton
   final BorderRadius borderRadius;
@@ -186,11 +182,8 @@ class SlidableAction extends StatelessWidget {
     final children = Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(icon),
-        Text(
-          label!,
-          overflow: TextOverflow.ellipsis,
-        ),
+        icon,
+        label,
       ],
     );
 

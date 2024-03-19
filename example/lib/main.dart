@@ -28,6 +28,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
               // The start action pane is the one at the left or the top side.
               startActionPane: ActionPane(
+                ratio: 0.2,
                 // A motion is a widget used to control how the pane animates.
                 motion: const ScrollMotion(),
 
@@ -37,11 +38,12 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 children: [
                   // A SlidableAction can have an icon and/or a label.
                   SlidableAction(
+                    padding: const EdgeInsets.only(right: 20),
                     onPressed: (context) {},
                     backgroundColor: const Color(0xFFFE4A49),
                     foregroundColor: Colors.white,
-                    icon: Icons.delete,
-                    label: 'Delete',
+                    icon: const Icon(Icons.delete),
+                    label: const Text('Delete'),
                   ),
                 ],
               ),
@@ -67,15 +69,8 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                     onPressed: doNothing,
                     backgroundColor: Color(0xFFFE4A49),
                     foregroundColor: Colors.white,
-                    icon: Icons.delete,
-                    label: 'Delete',
-                  ),
-                  SlidableAction(
-                    onPressed: doNothing,
-                    backgroundColor: Color(0xFF21B7CA),
-                    foregroundColor: Colors.white,
-                    icon: Icons.share,
-                    label: 'Share',
+                    icon: Icon(Icons.delete),
+                    label: Text('Delete'),
                   ),
                 ],
               ),
@@ -91,15 +86,8 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                     onPressed: doNothing,
                     backgroundColor: Color(0xFF7BC043),
                     foregroundColor: Colors.white,
-                    icon: Icons.archive,
-                    label: 'Archive',
-                  ),
-                  SlidableAction(
-                    onPressed: doNothing,
-                    backgroundColor: Color(0xFF0392CF),
-                    foregroundColor: Colors.white,
-                    icon: Icons.save,
-                    label: 'Save',
+                    icon: Icon(Icons.archive),
+                    label: Text('Archive'),
                   ),
                 ],
               ),
